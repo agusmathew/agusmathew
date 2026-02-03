@@ -3,6 +3,7 @@ import VisitTracker from "./VisitTracker";
 import HeaderNav from "./HeaderNav";
 import NewsletterPopup from "./NewsletterPopup";
 import ScrollProgress from "./ScrollProgress";
+import FunFacts from "./FunFacts";
 
 type Experience = {
   company: string;
@@ -209,6 +210,7 @@ export default function Home() {
       <VisitTracker />
       <NewsletterPopup />
       <ScrollProgress />
+      <FunFacts />
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-44 right-[-160px] h-[460px] w-[460px] rounded-full bg-[#0ea5e9] opacity-25 blur-3xl" />
@@ -475,7 +477,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Skills */}
-          <section id="skills" className="mt-20 scroll-mt-28">
+        <section id="skills" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Skills
             </h2>
@@ -496,12 +498,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </section>
+        </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Contact */}
-          <section id="contact" className="mt-20 scroll-mt-28">
+        <section id="contact" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Contact
             </h2>
