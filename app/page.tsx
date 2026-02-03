@@ -440,24 +440,24 @@ export default function Home() {
           </section>
 
           {/* Achievements */}
-        <section id="achievements" className="mt-20 scroll-mt-28">
-          <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Key achievements
-          </h2>
-          <div className="mt-6 grid gap-5 lg:grid-cols-3">
-            {achievements.map((a) => (
-              <div key={a.title} className={cardBase}>
-                <div className="text-base font-semibold">{a.title}</div>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  {a.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+          <section id="achievements" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Key achievements
+            </h2>
+            <div className="mt-6 grid gap-5 lg:grid-cols-3">
+              {achievements.map((a) => (
+                <div key={a.title} className={cardBase}>
+                  <div className="text-base font-semibold">{a.title}</div>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    {a.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Experience */}
-        <section id="experience" className="mt-20 scroll-mt-28">
+          {/* Experience */}
+          <section id="experience" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Experience
             </h2>
@@ -504,12 +504,12 @@ export default function Home() {
             </div>
           </section>
 
-        {/* Skills */}
-        <section id="skills" className="mt-20 scroll-mt-28">
-          <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Skills
-          </h2>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          {/* Skills */}
+          <section id="skills" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Skills
+            </h2>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {Object.entries(skills).map(([group, items]) => (
                 <div key={group} className={cardBase}>
                   <div className="text-base font-semibold">{group}</div>
@@ -633,34 +633,34 @@ export default function Home() {
                 >
                   StackOverflow
                 </a>
-              <a
-                className="hover:underline"
-                href={profile.hackerrank}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                HackerRank
-              </a>
-              <a
-                className="hover:underline"
-                href="/docs/AgusMathew.pdf"
-                download
-              >
-                <span className="inline-flex items-center gap-2">
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 20 20"
-                    className="h-4 w-4"
-                    fill="currentColor"
-                  >
-                    <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
-                  </svg>
-                  Download CV
-                </span>
-              </a>
+                <a
+                  className="hover:underline"
+                  href={profile.hackerrank}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  HackerRank
+                </a>
+                <a
+                  className="hover:underline"
+                  href="/docs/AgusMathew.pdf"
+                  download
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
+                    </svg>
+                    Download CV
+                  </span>
+                </a>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
         </main>
       </div>
     </div>
