@@ -42,6 +42,25 @@ export default function Home() {
     },
   ];
 
+  const gallery = [
+    {
+      src: "/gallery/IMG_8684.png",
+      alt: "Gallery image 1",
+    },
+    {
+      src: "/gallery/IMG_8710.png",
+      alt: "Gallery image 2",
+    },
+    {
+      src: "/gallery/IMG_8715.png",
+      alt: "Gallery image 3",
+    },
+    {
+      src: "/gallery/IMG_8843.png",
+      alt: "Gallery image 4",
+    },
+  ];
+
   const experience: Experience[] = [
     {
       company: "Finbogo Limited",
@@ -175,197 +194,212 @@ export default function Home() {
     ],
   } as const;
 
+  const cardBase =
+    "rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur";
+  const cardSoft =
+    "rounded-2xl border border-white/10 bg-[#0b1324]/80 p-5 shadow-[0_12px_35px_rgba(3,7,18,0.35)] backdrop-blur";
+  const pill =
+    "rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-slate-200";
+
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-black dark:text-zinc-50">
-      <header className="sticky top-0 z-10 border-b border-black/5 bg-zinc-50/80 backdrop-blur dark:border-white/10 dark:bg-black/70">
-        <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
-          <a href="#top" className="flex items-center gap-3">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900">
-              AM
-            </span>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold">{profile.name}</div>
-              <div className="text-xs text-zinc-600 dark:text-zinc-400">
-                {profile.role}
-              </div>
-            </div>
-          </a>
-          <nav className="hidden items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400 sm:flex">
-            <a
-              className="hover:text-zinc-900 dark:hover:text-zinc-50"
-              href="#about"
-            >
-              About
-            </a>
-            <a
-              className="hover:text-zinc-900 dark:hover:text-zinc-50"
-              href="#achievements"
-            >
-              Achievements
-            </a>
-            <a
-              className="hover:text-zinc-900 dark:hover:text-zinc-50"
-              href="#experience"
-            >
-              Experience
-            </a>
-            <a
-              className="hover:text-zinc-900 dark:hover:text-zinc-50"
-              href="#skills"
-            >
-              Skills
-            </a>
-            <a
-              className="hover:text-zinc-900 dark:hover:text-zinc-50"
-              href="#contact"
-            >
-              Contact
-            </a>
-          </nav>
+    <div className="min-h-screen bg-[#0b1020] text-slate-100 animated-grid">
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-44 right-[-160px] h-[460px] w-[460px] rounded-full bg-[#0ea5e9] opacity-25 blur-3xl" />
+          <div className="absolute top-28 left-[-160px] h-[380px] w-[380px] rounded-full bg-[#22d3ee] opacity-20 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),rgba(15,23,42,0))]" />
         </div>
-      </header>
 
-      <main id="top" className="mx-auto w-full max-w-5xl px-6 py-14">
-        {/* Hero */}
-        <section className="grid gap-8 sm:grid-cols-[1.2fr_0.8fr] sm:items-center">
-          <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-zinc-700 shadow-sm dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Open to opportunities
-            </div>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              {profile.name}
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              {overview}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-zinc-900 px-6 text-sm font-medium text-zinc-50 transition hover:opacity-90 dark:bg-zinc-50 dark:text-zinc-900"
-              >
-                Contact
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-black/10 bg-white px-6 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-white/10"
-              >
-                LinkedIn
-              </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-black/10 bg-white px-6 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-white/10"
-              >
-                GitHub
-              </a>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <span>{profile.location}</span>
-              <span aria-hidden="true">•</span>
-              <span>10+ years experience</span>
-              <span aria-hidden="true">•</span>
-              <span>Serverless, SaaS, Search, Security</span>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-            <div className="flex items-center gap-4">
-              <div className="relative h-14 w-14 overflow-hidden rounded-full border border-black/10 dark:border-white/10">
-                {/* Optional: add /public/avatar.jpg and swap src */}
+        <header className="sticky top-0 z-10 border-b border-white/10 bg-[#0b1020]/80 backdrop-blur">
+          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
+            <a href="#top" className="flex items-center gap-3">
+              <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/20 bg-white/10">
                 <Image
-                  src="/next.svg"
-                  alt="Avatar"
+                  src="/agus-portfolio.png"
+                  alt={`${profile.name} profile`}
                   fill
-                  className="object-contain p-3 dark:invert"
+                  className="object-cover"
                   priority
                 />
               </div>
-              <div>
-                <div className="text-sm font-semibold">{profile.role}</div>
-                <div className="text-xs text-zinc-600 dark:text-zinc-400">
-                  Platform & product engineering
+              <div className="leading-tight">
+                <div className="text-sm font-semibold text-slate-100">
+                  {profile.name}
+                </div>
+                <div className="text-xs text-slate-400">{profile.role}</div>
+              </div>
+            </a>
+            <nav className="hidden items-center gap-6 text-sm text-slate-300 sm:flex">
+              <a className="nav-link hover:text-white" href="#about">
+                About
+              </a>
+              <a className="nav-link hover:text-white" href="#achievements">
+                Achievements
+              </a>
+              <a className="nav-link hover:text-white" href="#experience">
+                Experience
+              </a>
+              <a className="nav-link hover:text-white" href="#skills">
+                Skills
+              </a>
+              <a className="nav-link hover:text-white" href="#contact">
+                Contact
+              </a>
+              <a className="nav-link hover:text-white" href="#gallery">
+                Gallery
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        <main id="top" className="mx-auto w-full max-w-6xl px-6 py-16">
+          {/* Hero */}
+          <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="space-y-6">
+              <div className="fade-up inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-slate-300 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-[#22d3ee]" />
+                Open to opportunities
+              </div>
+              <h1 className="fade-up delay-1 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                {profile.name}
+              </h1>
+              <p className="fade-up delay-2 max-w-2xl text-lg leading-8 text-slate-300">
+                {overview}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="#contact"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+                >
+                  Contact
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  GitHub
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300">
+                <span className={pill}>{profile.location}</span>
+                <span className={pill}>10+ years experience</span>
+                <span className={pill}>Serverless, SaaS, Security</span>
+              </div>
+            </div>
+
+            <div className={`${cardBase} float-slow`}>
+              <div className="flex items-center gap-5">
+                <div className="relative h-32 w-32 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                  {/* Optional: add /public/avatar.jpg and swap src */}
+                  <Image
+                    src="/agus-portfolio.png"
+                    alt="Avatar"
+                    fill
+                    className="object-cover object-[center_30%]"
+                    priority
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">
+                    {profile.role}
+                  </div>
+                  <div className="text-xs text-slate-400">
+                    Platform & product engineering
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 grid gap-3 text-sm">
+                <div
+                  className={`${cardSoft} flex items-center justify-between gap-3`}
+                >
+                  <span className="text-slate-400">Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href={`mailto:${profile.email}`}
+                  >
+                    {profile.email}
+                  </a>
+                </div>
+                <div
+                  className={`${cardSoft} flex items-center justify-between gap-3`}
+                >
+                  <span className="text-slate-400">Phone</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                  >
+                    {profile.phone}
+                  </a>
+                </div>
+                <div
+                  className={`${cardSoft} flex items-center justify-between gap-3`}
+                >
+                  <span className="text-slate-400">Links</span>
+                  <div className="flex items-center gap-3">
+                    <a
+                      className="font-medium hover:underline"
+                      href={profile.stackoverflow}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      StackOverflow
+                    </a>
+                    <a
+                      className="font-medium hover:underline"
+                      href={profile.hackerrank}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      HackerRank
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-6 grid gap-3 text-sm">
-              <div className="flex items-center justify-between gap-3 rounded-xl border border-black/5 bg-zinc-50 px-4 py-3 dark:border-white/10 dark:bg-black">
-                <span className="text-zinc-600 dark:text-zinc-400">Email</span>
-                <a
-                  className="font-medium hover:underline"
-                  href={`mailto:${profile.email}`}
-                >
-                  {profile.email}
-                </a>
-              </div>
-              <div className="flex items-center justify-between gap-3 rounded-xl border border-black/5 bg-zinc-50 px-4 py-3 dark:border-white/10 dark:bg-black">
-                <span className="text-zinc-600 dark:text-zinc-400">Phone</span>
-                <a
-                  className="font-medium hover:underline"
-                  href={`tel:${profile.phone.replace(/\s+/g, "")}`}
-                >
-                  {profile.phone}
-                </a>
-              </div>
-              <div className="flex items-center justify-between gap-3 rounded-xl border border-black/5 bg-zinc-50 px-4 py-3 dark:border-white/10 dark:bg-black">
-                <span className="text-zinc-600 dark:text-zinc-400">Links</span>
-                <div className="flex items-center gap-3">
-                  <a
-                    className="font-medium hover:underline"
-                    href={profile.stackoverflow}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    StackOverflow
-                  </a>
-                  <a
-                    className="font-medium hover:underline"
-                    href={profile.hackerrank}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    HackerRank
-                  </a>
-                </div>
-              </div>
+          </section>
+
+          {/* About */}
+          <section id="about" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              About
+            </h2>
+            <div className={`${cardBase} mt-6 text-slate-300`}>
+              <p className="leading-8 text-[15px]">
+                I build and ship production systems end-to-end: architecture,
+                APIs, data modeling, frontend delivery, CI/CD, and operations.
+                I’m most at home working on platform foundations (security,
+                reliability, performance) while staying close to product
+                outcomes.
+              </p>
+              <p className="mt-4 leading-8 text-[15px]">
+                Recent focus areas: serverless microservices on AWS,
+                multi-tenant SaaS, search/recommendation with Atlas Search,
+                secure auth with Cognito + RBAC, and improving discoverability
+                via SEO + SSR/SSG.
+              </p>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* About */}
-        <section id="about" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">About</h2>
-          <div className="mt-4 rounded-2xl border border-black/10 bg-white p-6 text-zinc-700 shadow-sm dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-300">
-            <p className="leading-8">
-              I build and ship production systems end-to-end: architecture,
-              APIs, data modeling, frontend delivery, CI/CD, and operations. I’m
-              most at home working on platform foundations (security,
-              reliability, performance) while staying close to product outcomes.
-            </p>
-            <p className="mt-4 leading-8">
-              Recent focus areas: serverless microservices on AWS, multi-tenant
-              SaaS, search/recommendation with Atlas Search, secure auth with
-              Cognito + RBAC, and improving discoverability via SEO + SSR/SSG.
-            </p>
-          </div>
-        </section>
-
-        {/* Achievements */}
-        <section id="achievements" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">
+          {/* Achievements */}
+        <section id="achievements" className="mt-20 scroll-mt-28">
+          <h2 className="text-3xl font-semibold tracking-tight text-white">
             Key achievements
           </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-5 lg:grid-cols-3">
             {achievements.map((a) => (
-              <div
-                key={a.title}
-                className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950"
-              >
-                <div className="text-sm font-semibold">{a.title}</div>
-                <p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+              <div key={a.title} className={cardBase}>
+                <div className="text-base font-semibold">{a.title}</div>
+                <p className="mt-3 text-sm leading-7 text-slate-300">
                   {a.description}
                 </p>
               </div>
@@ -374,161 +408,195 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">Experience</h2>
-          <div className="mt-6 space-y-6">
-            {experience.map((job) => (
-              <article
-                key={`${job.company}-${job.period}`}
-                className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950"
-              >
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                  <div>
-                    <h3 className="text-lg font-semibold">{job.company}</h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                      {job.title} • {job.location}
-                    </p>
+        <section id="experience" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Experience
+            </h2>
+            <div className="mt-6 space-y-6">
+              {experience.map((job) => (
+                <article
+                  key={`${job.company}-${job.period}`}
+                  className={cardBase}
+                >
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold">{job.company}</h3>
+                      <p className="text-sm text-slate-300">
+                        {job.title} • {job.location}
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-300">{job.period}</p>
                   </div>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                    {job.period}
-                  </p>
-                </div>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
-                  {job.highlights.map((h) => (
-                    <li key={h}>{h}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-300">
+                    {job.highlights.map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
 
-        {/* Education */}
-        <section id="education" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">Education</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {education.map((e) => (
-              <div
-                key={`${e.school}-${e.period}`}
-                className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950"
-              >
-                <div className="text-sm font-semibold">{e.school}</div>
-                <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                  {e.program}
+          {/* Education */}
+          <section id="education" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Education
+            </h2>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              {education.map((e) => (
+                <div key={`${e.school}-${e.period}`} className={cardBase}>
+                  <div className="text-base font-semibold">{e.school}</div>
+                  <div className="mt-1 text-sm text-slate-300">{e.program}</div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {e.location} • {e.period}
+                  </div>
                 </div>
-                <div className="mt-2 text-xs text-zinc-600 dark:text-zinc-400">
-                  {e.location} • {e.period}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        {/* Skills */}
-        <section id="skills" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">Skills</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {Object.entries(skills).map(([group, items]) => (
-              <div
-                key={group}
-                className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950"
-              >
-                <div className="text-sm font-semibold">{group}</div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {items.map((s) => (
-                    <span
-                      key={s}
-                      className="rounded-full border border-black/10 bg-zinc-50 px-3 py-1 text-xs text-zinc-700 dark:border-white/10 dark:bg-black dark:text-zinc-300"
-                    >
-                      {s}
-                    </span>
-                  ))}
+          {/* Skills */}
+          <section id="skills" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Skills
+            </h2>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              {Object.entries(skills).map(([group, items]) => (
+                <div key={group} className={cardBase}>
+                  <div className="text-base font-semibold">{group}</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {items.map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
         {/* Contact */}
-        <section id="contact" className="mt-16 scroll-mt-28">
-          <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
-          <div className="mt-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-            <p className="text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-              Want to collaborate or chat about a role? Email me and I’ll get
-              back to you.
-              <span className="block mt-2 text-xs">
-                References available on request.
-              </span>
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex h-11 items-center justify-center rounded-full bg-zinc-900 px-6 text-sm font-medium text-zinc-50 transition hover:opacity-90 dark:bg-zinc-50 dark:text-zinc-900"
-              >
-                Email me
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-black/10 bg-white px-6 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-white/10"
-              >
-                LinkedIn
-              </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-black/10 bg-white px-6 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:bg-white/10"
-              >
-                GitHub
-              </a>
+        <section id="contact" className="mt-20 scroll-mt-28">
+          <h2 className="text-3xl font-semibold tracking-tight text-white">
+            Contact
+          </h2>
+            <div className={`${cardBase} mt-6`}>
+              <p className="text-sm leading-7 text-slate-300">
+                Want to collaborate or chat about a role? Email me and I’ll get
+                back to you.
+                <span className="block mt-2 text-xs">
+                  References available on request.
+                </span>
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+                >
+                  Email me
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <footer className="mt-16 border-t border-black/5 pt-8 text-sm text-zinc-600 dark:border-white/10 dark:text-zinc-400">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {new Date().getFullYear()} {profile.name}
-            </p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              <a
-                className="hover:underline"
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                className="hover:underline"
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                className="hover:underline"
-                href={profile.stackoverflow}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                StackOverflow
-              </a>
-              <a
-                className="hover:underline"
-                href={profile.hackerrank}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                HackerRank
-              </a>
+          {/* Gallery */}
+          <section id="gallery" className="mt-20 scroll-mt-28">
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight text-white">
+                  Gallery
+                </h2>
+                <p className="mt-2 text-sm text-slate-400">
+                  A quick snapshot of the work and the person behind it.
+                </p>
+              </div>
             </div>
-          </div>
-        </footer>
-      </main>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {gallery.map((item) => (
+                <div key={item.src} className={cardBase}>
+                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      className={
+                        item.src.endsWith(".svg")
+                          ? "object-contain p-6"
+                          : "object-cover"
+                      }
+                    />
+                  </div>
+                  <div className="mt-4 text-sm font-semibold text-slate-200">
+                    {item.alt}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <footer className="mt-20 border-t border-white/10 pt-8 text-sm text-slate-400">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p>
+                © {new Date().getFullYear()} {profile.name}
+              </p>
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                <a
+                  className="hover:underline"
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  className="hover:underline"
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  className="hover:underline"
+                  href={profile.stackoverflow}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  StackOverflow
+                </a>
+                <a
+                  className="hover:underline"
+                  href={profile.hackerrank}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  HackerRank
+                </a>
+              </div>
+            </div>
+          </footer>
+        </main>
+      </div>
     </div>
   );
 }
