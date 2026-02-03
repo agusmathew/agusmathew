@@ -1,7 +1,7 @@
 import Link from "next/link";
-import MiniRunner from "../MiniRunner";
+import MemoryGame from "../../MemoryGame";
 
-export default function PlayPage() {
+export default function MemoryPage() {
   return (
     <div className="min-h-screen bg-[#0b1020] text-slate-100 animated-grid">
       <div className="relative overflow-hidden">
@@ -15,10 +15,10 @@ export default function PlayPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-semibold tracking-tight text-white">
-                Mini Runner
+                Memory Flip
               </h1>
               <p className="mt-2 text-slate-300">
-                Jump over obstacles and try to beat your best.
+                Find all pairs with the fewest moves.
               </p>
             </div>
             <Link
@@ -30,7 +30,7 @@ export default function PlayPage() {
           </div>
 
           <div className="mt-8">
-            <MiniRunner />
+            <MemoryGame />
           </div>
         </main>
       </div>

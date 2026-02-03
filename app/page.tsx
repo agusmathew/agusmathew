@@ -250,9 +250,19 @@ export default function Home() {
               <a className="nav-link hover:text-white" href="#gallery">
                 Gallery
               </a>
-              <a className="nav-link hover:text-white" href="/play">
-                Play
-              </a>
+              <div className="nav-dropdown">
+                <a className="nav-link hover:text-white" href="/play/runner">
+                  Play
+                </a>
+                <div className="nav-dropdown-menu">
+                  <a className="nav-dropdown-item" href="/play/runner">
+                    Mini Runner
+                  </a>
+                  <a className="nav-dropdown-item" href="/play/memory">
+                    Memory Flip
+                  </a>
+                </div>
+              </div>
               <a
                 className="nav-link hover:text-white"
                 href="/docs/AgusMathew.pdf"
