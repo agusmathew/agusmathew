@@ -51,7 +51,7 @@ export default function MathDash() {
 
   const placeholder = useMemo(
     () => (running ? "Type answer and press Enter" : "Press Start"),
-    [running]
+    [running],
   );
 
   function start() {
@@ -78,11 +78,18 @@ export default function MathDash() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <div className="text-base font-semibold text-white">Math Dash</div>
-          <div className="mt-1 text-sm text-slate-300">
+          <div
+            id="mathdash-instructions"
+            className="mt-1 text-sm text-slate-300"
+          >
             Solve as many as you can in 20 seconds.
           </div>
         </div>
-        <div className="flex items-center gap-4 text-sm text-slate-300">
+        <div
+          className="flex items-center gap-4 text-sm text-slate-300"
+          role="status"
+          aria-live="polite"
+        >
           <div>
             Time <span className="font-semibold text-white">{timeLeft}s</span>
           </div>
@@ -96,11 +103,15 @@ export default function MathDash() {
       </div>
 
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="text-3xl font-semibold text-white">
+        <div className="text-3xl font-semibold text-white" aria-live="polite">
           {question ? `${question.a} ${question.op} ${question.b} = ?` : "—"}
         </div>
         <div className="flex flex-wrap gap-3">
+          <label htmlFor="mathdash-answer" className="sr-only">
+            Answer
+          </label>
           <input
+            id="mathdash-answer"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
@@ -108,13 +119,15 @@ export default function MathDash() {
             }}
             placeholder={placeholder}
             disabled={!running}
-            className="h-11 w-56 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee]"
+            aria-describedby="mathdash-instructions"
+            className="h-11 w-56 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/50"
             inputMode="numeric"
           />
           <button
             type="button"
             onClick={running ? submit : start}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#22d3ee] px-6 text-sm font-semibold text-[#0b1020] transition hover:-translate-y-0.5 hover:opacity-90"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#22d3ee] px-6 text-sm font-semibold text-[#0b1020] transition hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50"
+            aria-label={running ? "Submit answer" : "Start math dash"}
           >
             {running ? "Submit" : "Start"}
           </button>
@@ -122,7 +135,11 @@ export default function MathDash() {
       </div>
 
       {done && (
-        <div className="mt-4 text-sm text-slate-300">
+        <div
+          className="mt-4 text-sm text-slate-300"
+          role="status"
+          aria-live="polite"
+        >
           Time’s up! You solved {score} problems. Press Start to try again.
         </div>
       )}
