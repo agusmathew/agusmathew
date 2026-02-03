@@ -17,7 +17,8 @@ export default function AboutPage() {
                 About Me
               </h1>
               <p className="mt-2 text-slate-300">
-                A brief story of how I build and why I care.
+                I build reliable, high‑impact systems that teams and customers
+                trust.
               </p>
             </div>
             <Link
@@ -30,33 +31,30 @@ export default function AboutPage() {
 
           <section className="mt-10 rounded-3xl border border-white/10 bg-[#0f172a]/80 p-8 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur">
             <h2 className="text-2xl font-semibold text-white">
-              I build systems that feel effortless
+              I build systems that scale with confidence
             </h2>
             <p className="mt-4 text-slate-300 leading-7">
-              I’m a full-stack engineer focused on scalable, user-centered
-              systems. I enjoy the parts of engineering that blend deep
-              technical thinking with real product outcomes—architecture,
-              reliability, performance, and the little details that make a
-              product feel fast and trustworthy.
+              I’m a full‑stack engineer who turns complex product goals into
+              reliable, measurable outcomes. I love the work that sits at the
+              intersection of architecture, performance, and user experience—
+              the details that make a platform feel fast, secure, and
+              effortless.
             </p>
             <p className="mt-4 text-slate-300 leading-7">
-              Over the last decade, I’ve built platforms across healthcare,
-              government, and SaaS, often working end-to-end: from design and
-              infrastructure to deployment and observability. I’m most at home
-              in environments where quality, privacy, and resilience matter.
+              Over the last decade, I’ve shipped platforms across healthcare,
+              government, and SaaS. I work end‑to‑end—design to deployment—
+              with a bias for quality, observability, and real‑world impact.
             </p>
           </section>
 
           <section className="mt-8 grid gap-6 md:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.35)] backdrop-blur">
-              <h3 className="text-lg font-semibold text-white">
-                How I work
-              </h3>
+              <h3 className="text-lg font-semibold text-white">How I work</h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li>Clear requirements, sharp priorities, fast feedback.</li>
-                <li>Readable code over clever code.</li>
-                <li>Performance and security as defaults.</li>
-                <li>Build once, instrument everywhere.</li>
+                <li>Start with clarity: sharp priorities and fast feedback.</li>
+                <li>Prefer readable, testable code over clever shortcuts.</li>
+                <li>Ship with performance, security, and resiliency built in.</li>
+                <li>Instrument everything so teams can move fast with trust.</li>
               </ul>
             </div>
             <div className="rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.35)] backdrop-blur">
@@ -64,10 +62,10 @@ export default function AboutPage() {
                 What I love building
               </h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li>Systems with data at the center.</li>
-                <li>Search and discovery workflows.</li>
-                <li>Reliable, secure infrastructure.</li>
-                <li>Interfaces that feel simple and fast.</li>
+                <li>Data‑driven platforms with real‑time insights.</li>
+                <li>Search and discovery that feel intuitive.</li>
+                <li>Secure, reliable infrastructure that scales.</li>
+                <li>Interfaces that feel simple, fast, and obvious.</li>
               </ul>
             </div>
           </section>
@@ -75,10 +73,10 @@ export default function AboutPage() {
           <section className="mt-8 rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.35)] backdrop-blur">
             <h3 className="text-lg font-semibold text-white">Outside work</h3>
             <p className="mt-3 text-sm text-slate-300 leading-7">
-              I enjoy exploring new tools, mentoring, and learning from how
-              teams ship real products. I’m always up for a good systems design
-              conversation and enjoy collaborating with people who care about
-              craft.
+              I enjoy mentoring, experimenting with new tools, and learning how
+              great teams ship great products. I’m always up for a systems
+              design conversation and love collaborating with people who care
+              about craft.
             </p>
           </section>
         </main>

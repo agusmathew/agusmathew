@@ -1,6 +1,8 @@
 import Image from "next/image";
 import VisitTracker from "./VisitTracker";
 import HeaderNav from "./HeaderNav";
+import NewsletterPopup from "./NewsletterPopup";
+import ScrollProgress from "./ScrollProgress";
 
 type Experience = {
   company: string;
@@ -24,23 +26,22 @@ export default function Home() {
   };
 
   const overview =
-    "Full-stack engineer with 10 years of experience, specializing in building scalable, high-quality systems across the full software development lifecycle—from design to production.";
+    "I build fast, reliable platforms that scale—end‑to‑end from architecture and data to product polish and delivery. Ten years in, my focus is simple: make systems people trust.";
 
   const achievements = [
     {
       title: "Finbogo Platform",
       description:
-        "Designed and implemented a healthcare booking system from scratch using a fully serverless microservices architecture on AWS with Node.js, Next.js, and MongoDB—contributing to securing major investment and successful product launch.",
+        "Built a healthcare booking platform from zero to launch on a fully serverless AWS stack—helping secure investment and accelerate product-market entry.",
     },
     {
       title: "Government of Bahamas — COVID Platform",
       description:
-        "Built a national COVID vaccination and testing web application to support booking and management workflows for the Government of Bahamas, delivering a highly available and secure system used at scale.",
+        "Delivered a national vaccination and testing system used at scale—high availability, security, and real‑world impact.",
     },
     {
       title: "Academic",
-      description:
-        "Top 21% (All India Rank 5349) in GATE 2017 out of 108,495 students.",
+      description: "Top 21% in GATE 2017 (All India Rank 5349 of 108,495).",
     },
   ];
 
@@ -70,14 +71,14 @@ export default function Home() {
       title: "Senior Full Stack Engineer",
       period: "Mar 2024 — Present",
       highlights: [
-        "Architected and owned an end-to-end serverless booking & scheduling platform using AWS Lambda, API Gateway, and CloudFormation for a multi-tenant healthcare SaaS.",
-        "Designed a queue-based slot scheduling system for concurrency safety, eliminating double-booking under high traffic.",
-        "Implemented Atlas Search for geo + relevance discovery and MongoDB Triggers for real-time data synchronization.",
-        "Built secure authn/authz with AWS Cognito and RBAC; integrated payments (Mollie) and accounting (Sage Intacct); enforced GDPR-aligned practices.",
-        "Improved performance with provisioned concurrency / warmers and scaled search for growing B2C traffic while keeping low latency.",
-        "Delivered SEO improvements with JSON-LD, dynamic sitemaps, SSR/SSG to boost discoverability.",
-        "Set up CI/CD with GitHub Actions, Jest, Playwright; deployed with AWS Amplify; observability with monitoring/alerts.",
-        "Partnered with product, design, and support to implement complex customer workflows.",
+        "Owned a multi‑tenant serverless booking platform (Lambda, API Gateway, CloudFormation) end‑to‑end.",
+        "Designed a queue‑based slot scheduler that prevents double‑booking under peak traffic.",
+        "Shipped geo‑relevance discovery with Atlas Search and real‑time sync via MongoDB Triggers.",
+        "Built Cognito + RBAC security and integrated payments and finance workflows (Mollie, Sage Intacct).",
+        "Scaled performance with provisioned concurrency and search tuning while keeping low latency.",
+        "Improved SEO with JSON‑LD, dynamic sitemaps, SSR/SSG for stronger discoverability.",
+        "Set up CI/CD (GitHub Actions, Jest, Playwright) and production monitoring/alerts.",
+        "Partnered closely with product and design to ship complex customer workflows.",
       ],
     },
     {
@@ -86,11 +87,11 @@ export default function Home() {
       title: "Full Stack Engineer",
       period: "Jan 2021 — Mar 2024",
       highlights: [
-        "Led delivery of large-scale government and B2B/B2C platforms, including a nationwide COVID vaccination/testing system supporting 500K+ users.",
-        "Served as Tech Lead / PM: mentored engineers, coordinated cross-functional teams, and delivered on time in regulated contexts.",
-        "Architected secure AWS infra: least-privilege IAM, RBAC, encryption, WAF, GuardDuty, VPC isolation, replication, and DR.",
-        "Built automated CI/CD with CodePipeline, GitHub Actions, CloudFormation, SAM; supported containerized workloads.",
-        "Built/modernized systems using Node.js, NestJS, Go, React, MongoDB, MySQL, and event-driven serverless architectures.",
+        "Delivered government and B2B/B2C platforms, including a nationwide COVID system serving 500K+ users.",
+        "Led teams as Tech Lead/PM—mentoring engineers and shipping on time in regulated environments.",
+        "Architected secure AWS infrastructure with least‑privilege IAM, WAF, VPC isolation, and DR.",
+        "Built automated CI/CD with CodePipeline, GitHub Actions, CloudFormation, and SAM.",
+        "Modernized systems with Node.js, NestJS, Go, React, and event‑driven serverless patterns.",
       ],
     },
     {
@@ -99,9 +100,9 @@ export default function Home() {
       title: "Freelance Software Consultant",
       period: "Oct 2021 — Present",
       highlights: [
-        "Led a team of four engineers and partnered with leadership to deliver scalable solutions, contributing to a 30% increase in profitability.",
-        "Architected and deployed e-commerce and AI-driven platforms using NestJS, React, MongoDB, and AWS (CloudFormation/CDK).",
-        "Supported an AI-powered education platform with personalized learning, insights, automated grading, and engagement features.",
+        "Led a team of four and partnered with leadership to deliver systems that drove +30% profitability.",
+        "Built e‑commerce and AI platforms with NestJS, React, MongoDB, and AWS (CloudFormation/CDK).",
+        "Shipped AI‑powered education features: personalization, insights, automated grading, and engagement.",
       ],
     },
     {
@@ -110,8 +111,8 @@ export default function Home() {
       title: "Software Engineer",
       period: "Jul 2020 — Jan 2021",
       highlights: [
-        "Developed a web-based payroll management system with Vue.js and TypeScript; automated workflows and applied modern frontend patterns.",
-        "Contributed to WordPress (PHP) and Django (Python) systems; enhanced reporter.lu mobile apps; handled CI/CD and app deployments.",
+        "Built a payroll platform with Vue.js + TypeScript and automated critical workflows.",
+        "Enhanced WordPress and Django systems, plus mobile apps, CI/CD, and deployments.",
       ],
     },
     {
@@ -120,8 +121,8 @@ export default function Home() {
       title: "Software Engineer",
       period: "Sep 2018 — Jun 2020",
       highlights: [
-        "Built a custom CMS to manage pages, press releases, and rich media (photos, video, audio).",
-        "Worked with US/EU clients to diagnose and resolve frontend/backend issues and deliver enhancements.",
+        "Built a custom CMS for pages, press releases, and rich media.",
+        "Solved cross‑stack issues for US/EU clients and delivered enhancements.",
       ],
     },
     {
@@ -130,8 +131,8 @@ export default function Home() {
       title: "Software Engineer",
       period: "Aug 2016 — Aug 2018",
       highlights: [
-        "Delivered 100+ production web scrapers using Python (Scrapy, BeautifulSoup, Selenium, lxml) for data mining and analysis.",
-        "Partnered with international clients to gather requirements and deliver reliable deployments using NumPy, pandas, Azure, Git, Jira.",
+        "Delivered 100+ production scrapers with Python for data mining at scale.",
+        "Partnered with international clients to scope, ship, and maintain reliable deployments.",
       ],
     },
   ];
@@ -206,6 +207,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0b1020] text-slate-100 animated-grid">
       <VisitTracker />
+      <NewsletterPopup />
+      <ScrollProgress />
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-44 right-[-160px] h-[460px] w-[460px] rounded-full bg-[#0ea5e9] opacity-25 blur-3xl" />
@@ -215,7 +218,10 @@ export default function Home() {
 
         <HeaderNav name={profile.name} role={profile.role} />
 
-        <main id="top" className="mx-auto w-full max-w-6xl px-6 py-16 pb-28 sm:pb-16">
+        <main
+          id="top"
+          className="mx-auto w-full max-w-6xl px-6 py-16 pb-28 sm:pb-16"
+        >
           {/* Hero */}
           <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-6">
@@ -237,20 +243,21 @@ export default function Home() {
                   Contact
                 </a>
                 <a
-                  href="/docs/AgusMathew.pdf"
-                  download
+                  href="https://calendar.app.google/oD2XbxUEPfGrycF46"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
                       aria-hidden="true"
-                      viewBox="0 0 20 20"
+                      viewBox="0 0 24 24"
                       className="h-4 w-4"
                       fill="currentColor"
                     >
-                      <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
+                      <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H3V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm14 9v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7h18Zm-9 2h-2v2H8v2h2v-2h2v-2Zm5 0h-3v2h3v-2Z" />
                     </svg>
-                    Download CV
+                    Book a call
                   </span>
                 </a>
                 <a
@@ -259,7 +266,17 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
                 >
-                  LinkedIn
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 .02 5 2.5 2.5 0 0 0-.02-5ZM3 8.98h4v12H3v-12Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09v6.32h-4v-5.6c0-1.34-.03-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-4v-12Z" />
+                    </svg>
+                    LinkedIn
+                  </span>
                 </a>
                 <a
                   href={profile.github}
@@ -267,7 +284,17 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
                 >
-                  GitHub
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.06 1.52 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                    </svg>
+                    GitHub
+                  </span>
                 </a>
               </div>
               <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300">
@@ -307,7 +334,17 @@ export default function Home() {
                     className="font-medium hover:underline"
                     href={`mailto:${profile.email}`}
                   >
-                    {profile.email}
+                    <span className="inline-flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        className="h-4 w-4"
+                        fill="currentColor"
+                      >
+                        <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.6-.25 6.4 4.2 6.4-4.2H5.6Zm12.9 2.2-6 3.94a1.5 1.5 0 0 1-1.6 0l-6-3.94v8.55c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V8.7Z" />
+                      </svg>
+                      {profile.email}
+                    </span>
                   </a>
                 </div>
                 <div
@@ -318,7 +355,17 @@ export default function Home() {
                     className="font-medium hover:underline"
                     href={`tel:${profile.phone.replace(/\s+/g, "")}`}
                   >
-                    {profile.phone}
+                    <span className="inline-flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        className="h-4 w-4"
+                        fill="currentColor"
+                      >
+                        <path d="M6.62 10.79a15.5 15.5 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
+                      </svg>
+                      {profile.phone}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -326,23 +373,21 @@ export default function Home() {
           </section>
 
           {/* About */}
-        <section id="about" className="mt-20 scroll-mt-28">
-          <h2 className="text-3xl font-semibold tracking-tight text-white">
-            About
-          </h2>
+          <section id="about" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              About
+            </h2>
             <div className={`${cardBase} mt-6 text-slate-300`}>
               <p className="leading-8 text-[15px]">
-                I build and ship production systems end-to-end: architecture,
-                APIs, data modeling, frontend delivery, CI/CD, and operations.
-                I’m most at home working on platform foundations (security,
-                reliability, performance) while staying close to product
-                outcomes.
+                I turn complex requirements into systems that feel effortless
+                for users and dependable for teams. My work spans architecture,
+                APIs, data modeling, frontend delivery, CI/CD, and operations,
+                with a strong bias for security, performance, and clarity.
               </p>
               <p className="mt-4 leading-8 text-[15px]">
-                Recent focus areas: serverless microservices on AWS,
-                multi-tenant SaaS, search/recommendation with Atlas Search,
-                secure auth with Cognito + RBAC, and improving discoverability
-                via SEO + SSR/SSG.
+                Recent focus: serverless AWS platforms, multi‑tenant SaaS,
+                search and discovery with Atlas Search, secure auth with Cognito
+                + RBAC, and measurable growth via SEO, SSR, and SSG.
               </p>
               <div className="mt-6">
                 <a
@@ -359,7 +404,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Achievements */}
-        <section id="achievements" className="mt-20 scroll-mt-28">
+          <section id="achievements" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Key achievements
             </h2>
@@ -373,12 +418,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Experience */}
-        <section id="experience" className="mt-20 scroll-mt-28">
+          <section id="experience" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Experience
             </h2>
@@ -405,12 +450,12 @@ export default function Home() {
                 </article>
               ))}
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Education */}
-        <section id="education" className="mt-20 scroll-mt-28">
+          <section id="education" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Education
             </h2>
@@ -425,12 +470,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Skills */}
-        <section id="skills" className="mt-20 scroll-mt-28">
+          <section id="skills" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Skills
             </h2>
@@ -442,7 +487,7 @@ export default function Home() {
                     {items.map((s) => (
                       <span
                         key={s}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200"
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition hover:-translate-y-0.5 hover:border-[#22d3ee]/40 hover:bg-white/10 hover:text-white"
                       >
                         {s}
                       </span>
@@ -451,12 +496,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Contact */}
-        <section id="contact" className="mt-20 scroll-mt-28">
+          <section id="contact" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Contact
             </h2>
@@ -473,7 +518,35 @@ export default function Home() {
                   href={`mailto:${profile.email}`}
                   className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
                 >
-                  Email me
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.6-.25 6.4 4.2 6.4-4.2H5.6Zm12.9 2.2-6 3.94a1.5 1.5 0 0 1-1.6 0l-6-3.94v8.55c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V8.7Z" />
+                    </svg>
+                    Email me
+                  </span>
+                </a>
+                <a
+                  href="https://calendar.app.google/oD2XbxUEPfGrycF46"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H3V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm14 9v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7h18Zm-9 2h-2v2H8v2h2v-2h2v-2Zm5 0h-3v2h3v-2Z" />
+                    </svg>
+                    Book a call
+                  </span>
                 </a>
                 <a
                   href={profile.linkedin}
@@ -481,7 +554,17 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
                 >
-                  LinkedIn
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 .02 5 2.5 2.5 0 0 0-.02-5ZM3 8.98h4v12H3v-12Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09v6.32h-4v-5.6c0-1.34-.03-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-4v-12Z" />
+                    </svg>
+                    LinkedIn
+                  </span>
                 </a>
                 <a
                   href={profile.github}
@@ -489,11 +572,21 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
                 >
-                  GitHub
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.06 1.52 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                    </svg>
+                    GitHub
+                  </span>
                 </a>
               </div>
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
@@ -539,35 +632,67 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-2">
                 <a
-                  className="hover:underline"
+                  className="inline-flex items-center gap-2 hover:underline"
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M4.98 3.5a2.5 2.5 0 1 0 .02 5 2.5 2.5 0 0 0-.02-5ZM3 8.98h4v12H3v-12Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09v6.32h-4v-5.6c0-1.34-.03-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-4v-12Z" />
+                  </svg>
                   LinkedIn
                 </a>
                 <a
-                  className="hover:underline"
+                  className="inline-flex items-center gap-2 hover:underline"
                   href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.06 1.52 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                  </svg>
                   GitHub
                 </a>
                 <a
-                  className="hover:underline"
+                  className="inline-flex items-center gap-2 hover:underline"
                   href={profile.stackoverflow}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M17.2 20.5V14h2v8.5H4.8V14h2v6.5h10.4ZM7.6 17h8.8v2H7.6v-2Zm.4-3 8.8 1.8-.4 2-8.8-1.8.4-2Zm1.4-3.5 8.2 3-.7 1.9-8.2-3 .7-1.9ZM11.5 3l7.1 5.2-1.2 1.6-7.1-5.2L11.5 3Zm-1 4.4 7.5 4.2-1 1.8-7.5-4.2 1-1.8Z" />
+                  </svg>
                   StackOverflow
                 </a>
                 <a
-                  className="hover:underline"
+                  className="inline-flex items-center gap-2 hover:underline"
                   href={profile.hackerrank}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2 3.2 7v10L12 22l8.8-5V7L12 2Zm4.6 12.1-2.2 1.3v-2.1H9.6v2.1l-2.2-1.3v-4.2l2.2-1.3v2.1h4.8V8.6l2.2 1.3v4.2Z" />
+                  </svg>
                   HackerRank
                 </a>
                 <a
@@ -602,6 +727,15 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <a
+          href="#top"
+          className="group fixed bottom-6 right-6 z-20 hidden h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 shadow-[0_12px_24px_rgba(3,7,18,0.4)] transition hover:-translate-y-0.5 hover:bg-white/10 sm:inline-flex"
+          aria-label="Back to top"
+        >
+          <span className="text-lg transition group-hover:-translate-y-0.5">
+            ↑
+          </span>
+        </a>
       </div>
     </div>
   );
