@@ -250,6 +250,9 @@ export default function Home() {
               <a className="nav-link hover:text-white" href="#gallery">
                 Gallery
               </a>
+              <a className="nav-link hover:text-white" href="/play">
+                Play
+              </a>
               <a
                 className="nav-link hover:text-white"
                 href="/docs/AgusMathew.pdf"
@@ -491,12 +494,12 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Skills */}
-          <section id="skills" className="mt-20 scroll-mt-28">
-            <h2 className="text-3xl font-semibold tracking-tight text-white">
-              Skills
-            </h2>
-            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+        {/* Skills */}
+        <section id="skills" className="mt-20 scroll-mt-28">
+          <h2 className="text-3xl font-semibold tracking-tight text-white">
+            Skills
+          </h2>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {Object.entries(skills).map(([group, items]) => (
                 <div key={group} className={cardBase}>
                   <div className="text-base font-semibold">{group}</div>
@@ -515,11 +518,11 @@ export default function Home() {
             </div>
           </section>
 
-        {/* Contact */}
-        <section id="contact" className="mt-20 scroll-mt-28">
-          <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Contact
-          </h2>
+          {/* Contact */}
+          <section id="contact" className="mt-20 scroll-mt-28">
+            <h2 className="text-3xl font-semibold tracking-tight text-white">
+              Contact
+            </h2>
             <div className={`${cardBase} mt-6`}>
               <p className="text-sm leading-7 text-slate-300">
                 Want to collaborate or chat about a role? Email me and I’ll get
