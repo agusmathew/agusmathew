@@ -159,12 +159,7 @@ export default function MiniRunner() {
 
       context.fillStyle = "#38bdf8";
       for (const obs of obstacles) {
-        context.fillRect(
-          obs.x,
-          groundY - obs.height,
-          obs.width,
-          obs.height
-        );
+        context.fillRect(obs.x, groundY - obs.height, obs.width, obs.height);
       }
 
       frameRef.current = requestAnimationFrame(loop);
