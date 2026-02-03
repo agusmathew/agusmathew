@@ -54,6 +54,37 @@ body {
   transform: scaleX(1);
 }
 
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.6), transparent);
+  opacity: 0.8;
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(34, 211, 238, 0.18);
+}
+
+.cta-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: -120% -40%;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-60%);
+  animation: shimmer 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .nav-dropdown {
   position: relative;
 }
@@ -172,6 +203,18 @@ body {
   }
   100% {
     transform: translateY(-48px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-60%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(60%);
   }
 }
 

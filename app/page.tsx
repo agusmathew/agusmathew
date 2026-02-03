@@ -197,7 +197,7 @@ export default function Home() {
   } as const;
 
   const cardBase =
-    "rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur";
+    "card-hover rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur";
   const cardSoft =
     "rounded-2xl border border-white/10 bg-[#0b1324]/80 p-5 shadow-[0_12px_35px_rgba(3,7,18,0.35)] backdrop-blur";
   const pill =
@@ -215,7 +215,7 @@ export default function Home() {
 
         <HeaderNav name={profile.name} role={profile.role} />
 
-        <main id="top" className="mx-auto w-full max-w-6xl px-6 py-16">
+        <main id="top" className="mx-auto w-full max-w-6xl px-6 py-16 pb-28 sm:pb-16">
           {/* Hero */}
           <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-6">
@@ -232,7 +232,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+                  className="cta-shimmer inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Contact
                 </a>
@@ -321,38 +321,15 @@ export default function Home() {
                     {profile.phone}
                   </a>
                 </div>
-                <div
-                  className={`${cardSoft} flex items-center justify-between gap-3`}
-                >
-                  <span className="text-slate-400">Links</span>
-                  <div className="flex items-center gap-3">
-                    <a
-                      className="font-medium hover:underline"
-                      href={profile.stackoverflow}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      StackOverflow
-                    </a>
-                    <a
-                      className="font-medium hover:underline"
-                      href={profile.hackerrank}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      HackerRank
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
 
           {/* About */}
-          <section id="about" className="mt-20 scroll-mt-28">
-            <h2 className="text-3xl font-semibold tracking-tight text-white">
-              About
-            </h2>
+        <section id="about" className="mt-20 scroll-mt-28">
+          <h2 className="text-3xl font-semibold tracking-tight text-white">
+            About
+          </h2>
             <div className={`${cardBase} mt-6 text-slate-300`}>
               <p className="leading-8 text-[15px]">
                 I build and ship production systems end-to-end: architecture,
@@ -367,11 +344,22 @@ export default function Home() {
                 secure auth with Cognito + RBAC, and improving discoverability
                 via SEO + SSR/SSG.
               </p>
+              <div className="mt-6">
+                <a
+                  href="/about"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  Read more about me
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </section>
 
+          <div className="mt-16 section-divider" />
+
           {/* Achievements */}
-          <section id="achievements" className="mt-20 scroll-mt-28">
+        <section id="achievements" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Key achievements
             </h2>
@@ -385,10 +373,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </section>
+        </section>
+
+          <div className="mt-16 section-divider" />
 
           {/* Experience */}
-          <section id="experience" className="mt-20 scroll-mt-28">
+        <section id="experience" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Experience
             </h2>
@@ -415,10 +405,12 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </section>
+        </section>
+
+          <div className="mt-16 section-divider" />
 
           {/* Education */}
-          <section id="education" className="mt-20 scroll-mt-28">
+        <section id="education" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Education
             </h2>
@@ -433,10 +425,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </section>
+        </section>
+
+          <div className="mt-16 section-divider" />
 
           {/* Skills */}
-          <section id="skills" className="mt-20 scroll-mt-28">
+        <section id="skills" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Skills
             </h2>
@@ -457,10 +451,12 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </section>
+        </section>
+
+          <div className="mt-16 section-divider" />
 
           {/* Contact */}
-          <section id="contact" className="mt-20 scroll-mt-28">
+        <section id="contact" className="mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Contact
             </h2>
@@ -497,7 +493,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </section>
+        </section>
+
+          <div className="mt-16 section-divider" />
 
           {/* Gallery */}
           <section id="gallery" className="mt-20 scroll-mt-28">
@@ -593,6 +591,17 @@ export default function Home() {
             </div>
           </footer>
         </main>
+        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-white/10 bg-[#0b1020]/95 px-6 py-3 backdrop-blur sm:hidden">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 text-sm">
+            <span className="text-slate-300">Let’s work together</span>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-[#22d3ee] px-4 py-2 text-xs font-semibold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.3)] transition hover:opacity-90"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
