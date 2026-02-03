@@ -4,6 +4,8 @@ import HeaderNav from "./HeaderNav";
 import NewsletterPopup from "./NewsletterPopup";
 import ScrollProgress from "./ScrollProgress";
 import FunFacts from "./FunFacts";
+import CursorGlow from "./CursorGlow";
+import RevealOnScroll from "./RevealOnScroll";
 
 type Experience = {
   company: string;
@@ -211,6 +213,8 @@ export default function Home() {
       <NewsletterPopup />
       <ScrollProgress />
       <FunFacts />
+      <CursorGlow />
+      <RevealOnScroll />
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-44 right-[-160px] h-[460px] w-[460px] rounded-full bg-[#0ea5e9] opacity-25 blur-3xl" />
@@ -225,7 +229,7 @@ export default function Home() {
           className="mx-auto w-full max-w-6xl px-6 py-16 pb-28 sm:pb-16"
         >
           {/* Hero */}
-          <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <section className="reveal grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-6">
               <div className="fade-up inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-slate-300 shadow-sm">
                 <span className="h-2 w-2 rounded-full bg-[#22d3ee]" />
@@ -375,7 +379,7 @@ export default function Home() {
           </section>
 
           {/* About */}
-          <section id="about" className="mt-20 scroll-mt-28">
+        <section id="about" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               About
             </h2>
@@ -406,7 +410,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Achievements */}
-          <section id="achievements" className="mt-20 scroll-mt-28">
+        <section id="achievements" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Key achievements
             </h2>
@@ -425,7 +429,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Experience */}
-          <section id="experience" className="mt-20 scroll-mt-28">
+        <section id="experience" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Experience
             </h2>
@@ -457,7 +461,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Education */}
-          <section id="education" className="mt-20 scroll-mt-28">
+        <section id="education" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Education
             </h2>
@@ -477,7 +481,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Skills */}
-        <section id="skills" className="mt-20 scroll-mt-28">
+        <section id="skills" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Skills
             </h2>
@@ -503,7 +507,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Contact */}
-        <section id="contact" className="mt-20 scroll-mt-28">
+        <section id="contact" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Contact
             </h2>
@@ -593,7 +597,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Gallery */}
-          <section id="gallery" className="mt-20 scroll-mt-28">
+          <section id="gallery" className="reveal mt-20 scroll-mt-28">
             <div className="flex items-end justify-between gap-4">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-white">
