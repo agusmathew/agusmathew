@@ -10,6 +10,7 @@ export default function CursorGlow() {
     if (!glow) return;
 
     function handleMove(e: MouseEvent) {
+      if (!glow) return;
       const x = e.clientX - 110;
       const y = e.clientY - 110;
       glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
