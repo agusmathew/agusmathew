@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   const overview =
-    "I build fast, reliable platforms that scale—end‑to‑end from architecture and data to product polish and delivery. Ten years in, my focus is simple: make systems people trust.";
+    "Full-stack engineer with 10 years of experience, specializing in building scalable, high-quality systems across the full software development lifecycle from design to production. Skilled in serverless architecture, SaaS platforms, and cloud infrastructure (AWS), delivering impactful solutions that drive business growth and operational excellence.";
 
   const achievements = [
     {
@@ -180,7 +180,15 @@ export default function Home() {
       "Cassandra",
     ],
     "DevOps & Platform": [
-      "AWS (IAM, Lambda, API Gateway, S3, Route53, Cognito, ECS, EC2)",
+      "AWS",
+      "IAM",
+      "Lambda",
+      "API Gateway",
+      "S3",
+      "Route 53",
+      "Cognito",
+      "ECS",
+      "EC2",
       "CloudFormation",
       "SAM",
       "CDK",
@@ -199,6 +207,85 @@ export default function Home() {
       "CloudWatch",
     ],
   } as const;
+
+  const skillIcons: Record<string, string> = {
+    TypeScript:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    JavaScript:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    Python:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    Go: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+    "C++":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "Node.js":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    NestJS:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+    "Next.js":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    React:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    Django:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    Flask:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    FastAPI:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    "Vue.js":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    AngularJS:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    Express:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    MongoDB:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    MySQL:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    PostgreSQL:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    DynamoDB: "https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg",
+    BigQuery:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+    Redis:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    Cassandra:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachecassandra/apachecassandra-original.svg",
+    AWS: "https://icon.icepanel.io/AWS/svg/General/AWS-Cloud.svg",
+    IAM: "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/IAM.svg",
+    Lambda: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg",
+    "API Gateway":
+      "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/API-Gateway.svg",
+    S3: "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg",
+    "Route 53":
+      "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+    Cognito:
+      "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg",
+    ECS: "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Container-Service.svg",
+    EC2: "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+    CloudFormation:
+      "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg",
+    SAM: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg",
+    CDK: "https://icon.icepanel.io/AWS/svg/Developer-Tools/Cloud-Development-Kit.svg",
+    Amplify:
+      "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg",
+    Docker:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "CI/CD":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
+    "Platform Engineering":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+    SQS: "https://icon.icepanel.io/AWS/svg/App-Integration/Simple-Queue-Service.svg",
+    SNS: "https://icon.icepanel.io/AWS/svg/App-Integration/Simple-Notification-Service.svg",
+    SES: "https://icon.icepanel.io/AWS/svg/Business-Applications/Simple-Email-Service.svg",
+    WAF: "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/WAF.svg",
+    GuardDuty:
+      "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/GuardDuty.svg",
+    "X-Ray": "https://icon.icepanel.io/AWS/svg/Developer-Tools/X-Ray.svg",
+    CloudWatch:
+      "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudWatch.svg",
+  };
 
   const cardBase =
     "card-hover rounded-3xl border border-white/10 bg-[#0f172a]/80 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur";
@@ -306,7 +393,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300">
                 <span className={pill}>{profile.location}</span>
                 <span className={pill}>10+ years experience</span>
-                <span className={pill}>Serverless, SaaS, Security</span>
+                <span className={pill}>Serverless, SaaS, Full-Stack</span>
               </div>
             </div>
 
@@ -379,7 +466,7 @@ export default function Home() {
           </section>
 
           {/* About */}
-        <section id="about" className="reveal mt-20 scroll-mt-28">
+          <section id="about" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               About
             </h2>
@@ -410,7 +497,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Achievements */}
-        <section id="achievements" className="reveal mt-20 scroll-mt-28">
+          <section id="achievements" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Key achievements
             </h2>
@@ -429,7 +516,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Experience */}
-        <section id="experience" className="reveal mt-20 scroll-mt-28">
+          <section id="experience" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Experience
             </h2>
@@ -461,7 +548,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Education */}
-        <section id="education" className="reveal mt-20 scroll-mt-28">
+          <section id="education" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Education
             </h2>
@@ -481,7 +568,7 @@ export default function Home() {
           <div className="mt-16 section-divider" />
 
           {/* Skills */}
-        <section id="skills" className="reveal mt-20 scroll-mt-28">
+          <section id="skills" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Skills
             </h2>
@@ -490,24 +577,37 @@ export default function Home() {
                 <div key={group} className={cardBase}>
                   <div className="text-base font-semibold">{group}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {items.map((s) => (
-                      <span
-                        key={s}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition hover:-translate-y-0.5 hover:border-[#22d3ee]/40 hover:bg-white/10 hover:text-white"
-                      >
-                        {s}
-                      </span>
-                    ))}
+                    {items.map((s) => {
+                      const icon = skillIcons[s];
+                      return (
+                        <span
+                          key={s}
+                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200 transition hover:-translate-y-0.5 hover:border-[#22d3ee]/40 hover:bg-white/10 hover:text-white"
+                        >
+                          <span className="inline-flex items-center gap-2">
+                            {icon && (
+                              <img
+                                src={icon}
+                                alt=""
+                                className="h-4 w-4"
+                                loading="lazy"
+                              />
+                            )}
+                            {s}
+                          </span>
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
             </div>
-        </section>
+          </section>
 
           <div className="mt-16 section-divider" />
 
           {/* Contact */}
-        <section id="contact" className="reveal mt-20 scroll-mt-28">
+          <section id="contact" className="reveal mt-20 scroll-mt-28">
             <h2 className="text-3xl font-semibold tracking-tight text-white">
               Contact
             </h2>
