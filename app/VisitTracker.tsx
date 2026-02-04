@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import UAParser from "ua-parser-js";
 
 const SESSION_KEY = "visit_session_id";
 
@@ -31,6 +32,17 @@ export default function VisitTracker() {
       };
     };
 
+    const ua = navigator.userAgent || "";
+    const deviceType = /ipad|tablet/i.test(ua)
+      ? "tablet"
+      : /mobi|android|iphone|ipod/i.test(ua)
+      ? "mobile"
+      : "desktop";
+    const parsed = new UAParser(ua).getResult();
+    const deviceModel = parsed.device?.model || "unknown";
+    const deviceNameMatch =
+      ua.match(/\(([^)]+)\)/)?.[1]?.split(";")?.[0]?.trim() || "unknown";
+
     const payload = {
       sessionId,
       path: window.location.pathname,
@@ -40,6 +52,9 @@ export default function VisitTracker() {
       language: navigator.language,
       languages: navigator.languages,
       platform: navigator.platform,
+      deviceType,
+      deviceName: deviceNameMatch,
+      deviceModel,
       deviceMemory: "deviceMemory" in navigator ? navigator.deviceMemory : null,
       hardwareConcurrency: navigator.hardwareConcurrency,
       connection:

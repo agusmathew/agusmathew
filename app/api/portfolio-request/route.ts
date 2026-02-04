@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import clientPromise from "@/lib/mongodb";
 
 export const runtime = "nodejs";
 
@@ -72,10 +73,29 @@ export async function POST(req: NextRequest) {
       }),
     );
 
+    const fileUrl = `https://${bucket}.s3.${region}.amazonaws.com/${key}`;
+
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       req.headers.get("x-real-ip") ||
       "unknown";
+
+    const client = await clientPromise;
+    const db = client.db("portfolio");
+    const requests = db.collection("portfolio_requests");
+
+    await requests.insertOne({
+      name,
+      email,
+      message,
+      fileName: file.name,
+      fileType: file.type || null,
+      fileSize: file.size,
+      s3Key: key,
+      s3Url: fileUrl,
+      ip,
+      createdAt: new Date(),
+    });
 
     const emailBody = [
       "New portfolio request:",
@@ -84,6 +104,7 @@ export async function POST(req: NextRequest) {
       `Email: ${email}`,
       `Message: ${message || "(none)"}`,
       `CV S3 Key: ${key}`,
+      `CV URL: ${fileUrl}`,
       `IP: ${ip}`,
     ].join("\n");
 
